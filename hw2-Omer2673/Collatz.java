@@ -6,13 +6,11 @@ public class Collatz {
 
         boolean verbose = mode.equals("v");
 
-        // נניח שהתזה נכונה עד שיוכח אחרת
-        boolean allReachedOne = true;
-
         for (int seed = 1; seed <= N; seed++) {
             int current = seed;
             int steps = 1;
 
+            // רק אם verbose — נדפיס
             if (verbose) {
                 System.out.print(current + " ");
             }
@@ -23,7 +21,6 @@ public class Collatz {
                 } else {
                     current = 3 * current + 1;
                 }
-
                 steps++;
 
                 if (verbose) {
@@ -36,7 +33,7 @@ public class Collatz {
             }
         }
 
-        // ✅ שורת הסיכום חייבת ALWAYS להופיע (גם ב־concise)
+        // ✅ הסיכום תמיד יודפס
         System.out.println("Every one of the first " + N + " hailstone sequences reached 1.");
     }
 }
