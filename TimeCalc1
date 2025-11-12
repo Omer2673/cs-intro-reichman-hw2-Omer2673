@@ -1,0 +1,21 @@
+public class TimeCalc1 {
+
+    public static void main(String[] args) {
+        String[] parts = args[0].split(":");
+        int hours = Integer.parseInt(parts[0]);
+        int minutes = Integer.parseInt(parts[1]);
+        int minutesToAdd = Integer.parseInt(args[1]);
+
+        int totalMinutes = hours * 60 + minutes + minutesToAdd;
+        int newHours = (totalMinutes / 60) % 24;
+        int newMinutes = totalMinutes % 60;
+
+        if (newHours < 10) System.out.print("0" + newHours);
+        else System.out.print(newHours);
+
+        System.out.print(":");
+
+        if (newMinutes < 10) System.out.print("0" + newMinutes);
+        else System.out.print(newMinutes);
+    }
+}
