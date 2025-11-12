@@ -1,4 +1,4 @@
-public class TimeCalc1 {
+public class TimeCalc {
 
     public static void main(String[] args) {
         String[] parts = args[0].split(":");
