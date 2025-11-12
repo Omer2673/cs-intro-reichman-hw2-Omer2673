@@ -10,10 +10,8 @@ public class Collatz {
             int current = seed;
             int steps = 1;
 
-            // רק אם verbose — נדפיס
-            if (verbose) {
-                System.out.print(current + " ");
-            }
+            // אם verbose - נדפיס את הרצף
+            if (verbose) System.out.print(current + " ");
 
             while (current != 1) {
                 if (current % 2 == 0) {
@@ -22,18 +20,13 @@ public class Collatz {
                     current = 3 * current + 1;
                 }
                 steps++;
-
-                if (verbose) {
-                    System.out.print(current + " ");
-                }
+                if (verbose) System.out.print(current + " ");
             }
 
-            if (verbose) {
-                System.out.println("(" + steps + ")");
-            }
+            if (verbose) System.out.println("(" + steps + ")");
         }
 
-        // ✅ הסיכום תמיד יודפס
-        System.out.println("Every one of the first " + N + " hailstone sequences reached 1.");
+        // 👇 הדפסה אחת בלבד, בלי רווחים, בלי שורה ריקה, בדיוק כמו שהבודק דורש
+        System.out.print("Every one of the first " + N + " hailstone sequences reached 1.");
     }
 }
